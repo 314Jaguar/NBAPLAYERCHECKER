@@ -1,4 +1,4 @@
-const questions = [
+ const questions = [
     { question: "Which position do you prefer to play?", options: ["Point Guard", "Shooting Guard", "Small Forward", "Power Forward", "Center"] },
     { question: "What is your strongest skill?", options: ["Shooting", "Passing", "Defense", "Rebounding", "Speed"] },
     { question: "What is your weakest area?", options: ["Shooting", "Passing", "Defense", "Rebounding", "Speed"] },
