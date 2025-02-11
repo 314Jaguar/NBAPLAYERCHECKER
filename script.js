@@ -49,8 +49,17 @@ const questions = [
     { question: "What's your favorite type of basketball shoe?", options: ["High-top", "Low-top", "Mid-top", "Retro", "Signature"] },
 ];
 
+const playerDescriptions = {
+    "Keegan Murray": "Keegan Murray is known for his versatility and strong defensive skills. He excels at both ends of the court.",
+    "LeBron James": "LeBron James is a dominant all-around player with exceptional passing, scoring, and leadership abilities.",
+    "Steph Curry": "Steph Curry is renowned for his incredible shooting accuracy and ability to create plays from beyond the arc.",
+    "Trae Young": "Trae Young is an offensive powerhouse with excellent ball-handling skills and a knack for scoring.",
+    "Dante Exum": "Dante Exum is a rare talent with a unique combination of size, speed, and playmaking ability."
+};
+
 const quizContainer = document.getElementById('quiz');
 const resultContainer = document.getElementById('result');
+const resultContainerParent = document.getElementById('result-container');
 
 function loadQuiz() {
     questions.forEach((q, index) => {
@@ -82,7 +91,6 @@ function calculateResult() {
         }
     });
 
-    // Calculate which NBA player the user is most like
     const playerScores = {
         "Keegan Murray": 0,
         "LeBron James": 0,
@@ -91,7 +99,6 @@ function calculateResult() {
         "Dante Exum": 0
     };
 
-    // Example scoring logic (this should be tailored to the actual logic you want to use)
     answers.forEach(answer => {
         if (answer === 0) playerScores["Keegan Murray"]++;
         else if (answer === 1) playerScores["LeBron James"]++;
@@ -100,7 +107,6 @@ function calculateResult() {
         else if (answer === 4) playerScores["Dante Exum"]++;
     });
 
-    // Find the player with the highest score
     let highestScore = -1;
     let mostLikePlayer = "";
     for (const player in playerScores) {
@@ -110,8 +116,9 @@ function calculateResult() {
         }
     }
 
-    resultContainer.innerHTML = `You are most like ${mostLikePlayer}`;
-    resultContainer.style.display = 'block';
+    resultContainer.innerHTML = `You are most like ${mostLikePlayer}<br><br>${playerDescriptions[mostLikePlayer]}`;
+    resultContainerParent.style.display = 'block';
+    resultContainer.scrollIntoView({ behavior: 'smooth' });
 }
 
 loadQuiz();
