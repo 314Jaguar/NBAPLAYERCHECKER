@@ -6,12 +6,36 @@ body {
     background-size: cover;
     margin: 0;
     padding: 0;
+    color: #fff;
+}
+.landing {
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    color: #fff;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+}
+.landing h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+.landing p {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+.scroll-down-indicator {
+    font-size: 1.5em;
+    animation: bounce 2s infinite;
+}
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
 }
 .container {
     background: rgba(0, 0, 0, 0.8);
@@ -20,6 +44,8 @@ body {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
     max-width: 700px;
     width: 100%;
+    margin: auto;
+    margin-top: 0;
     text-align: center;
 }
 h1 {
@@ -54,9 +80,12 @@ button {
 button:hover {
     background: #ff9900;
 }
-.result {
+#result-container {
     display: none;
+    text-align: center;
+    margin-top: 20px;
+}
+.result {
     font-size: 1.5em;
     margin-top: 20px;
-    text-align: center;
 }
